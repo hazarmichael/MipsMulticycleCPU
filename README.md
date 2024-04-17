@@ -7,7 +7,7 @@
     to more complex tasks including decision-making processes.
 
 
-## Design Specifications
+## Design Specification
 
 ### Key features
 
