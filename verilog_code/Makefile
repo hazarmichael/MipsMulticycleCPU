@@ -24,7 +24,9 @@ $(FILELIST):
 
 sim: $(FILELIST)
 	$(VERILATOR) $(VERILATOR_FLAGS) -f $(FILELIST) --top $(TOP)
-	$(MAKE) -C obj_dir -j -f V$(TOP).mk
+
+run:
+	./obj_dir/V$(TOP)
 
 clean:
 	rm -rf obj_dir $(FILELIST) dump.vcd

@@ -6,12 +6,9 @@
 module computer (
 
     input clk, reset,
-    output [3:0] state,
-    output [31:0] ALUresult,
-    output [1:0] ALUop
-  );
+    output [31:0] data_out_instruction);
 
-  wire [31:0] data_out_instruction, data_out, data_in, address_data, address_inst;
+  wire [31:0] data_out, data_in, address_data, address_inst;
 
   wire memWrite, memRead;
 
@@ -43,10 +40,7 @@ module computer (
         .address_instruction(address_inst),
         .MemWrite(memWrite),
         .MemRead(memRead),
-        .reset(reset),
-        .state(state),
-        .ALUresult(ALUresult),
-        .ALUop(ALUop)
+        .reset(reset)
       );
 
 endmodule
