@@ -20,6 +20,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8
 
+    - name: Create output directory
+      run: mkdir -p output
+
     - name: Run assembly script and check Python runtime errors for each file in testcases
       run: |
         set +e
@@ -34,3 +37,7 @@ jobs:
         if [ $all_errors -ne 0 ]; then
           exit 1
         fi
+
+    - name: Clean up output directory
+      if: always()
+      run: rm -rf output
