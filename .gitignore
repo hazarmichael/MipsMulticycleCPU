@@ -5,3 +5,4 @@ verilog_code/dump.vcd
 verilog_code/synth.f
 assembler/venv
 .idea
+*.bin
