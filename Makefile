@@ -8,7 +8,8 @@ all: sim
 
 $(FILELIST):
 	@mkdir -p build
-	@echo "src/basic_components/flop.v" > $(FILELIST)
+	@echo "src/basic_components/clockworks.v" > $(FILELIST)
+	@echo "src/basic_components/flop.v" >> $(FILELIST)
 	@echo "src/basic_components/reg_file.v" >> $(FILELIST)
 	@echo "src/basic_components/mux2_1.v" >> $(FILELIST)
 	@echo "src/basic_components/mux4_1.v" >> $(FILELIST)
