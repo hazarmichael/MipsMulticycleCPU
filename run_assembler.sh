@@ -23,6 +23,7 @@ fi
 
 # Run the assembler
 python assembler/main.py "$@"
+echo $?
 
 # Deactivate the virtual environment
 deactivate
