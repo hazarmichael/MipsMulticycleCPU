@@ -10,7 +10,7 @@ module instructionMemory #(
 
   initial
   begin
-    $readmemb("memories/inst.dat", mem,  0, 11);
+    $readmemb("src/memories/inst.dat", mem,  0, 11);
   end
 
   assign data = mem[address];
