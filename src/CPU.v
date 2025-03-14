@@ -4,12 +4,11 @@ module CPU (
     input clk, reset,
     output [31:0] data_in, address_data,
     address_instruction,
-
-
+    output led,
     output MemWrite, MemRead
   );
 
-  wire [5:0] opcode;
+  wire [5:0] opcode; /*synthesis syn_keep=1*/
   wire [1:0] mode;
 
   wire    MemWriteSel, MemReg, RegSrc,
@@ -18,8 +17,8 @@ module CPU (
           StackWrite, sign_ext, PCwriteCond, PCwrite, StackSelect;
 
   wire [1:0] ALUsrcA, ALUsrcB,
-       PCsrc , ALUctrl, StackALU, ALUop;
-
+       PCsrc , StackALU;
+  wire [1:0] ALUctrl, ALUop; /*synthesis syn_keep=1*/ 
   wire [31:0] ALUresult;
   wire [3:0] state;
 
@@ -45,7 +44,8 @@ module CPU (
              .address_data(address_data),
              .address_instruction(address_instruction), .data_in(data_in),
              .z(z), .n(n), .v(v),
-             .ALU_result(ALUresult)
+             .ALU_result(ALUresult),
+             .led(led)
            );
 
 
