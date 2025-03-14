@@ -9,4 +9,4 @@ pop r7
 pop r8
 add r10, r7, r8
 addi r15, r0, 10
-sw r10, r15, 0
+sw r10, 0(r15)

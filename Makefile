@@ -30,4 +30,4 @@ run:
 	./build/V$(TOP)
 
 clean:
-	rm -rf obj_dir $(FILELIST) dump.vcd
+	rm -rf build src/dump.vcd

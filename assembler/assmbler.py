@@ -17,7 +17,7 @@ class SymbolTable:
 
 class Assembler:
     # Path to your JSON file
-    json_file_path = "assembler/instructions.json"
+    json_file_path = "instructions.json"
     # Open and read the JSON file
     with open(json_file_path, "r") as file:
         INSTRUCTIONS = json.load(file)
@@ -103,11 +103,13 @@ class Assembler:
         else:
             if mnemonic in ['LW', 'LW.POT', 'SW']:
                 # Format: Rd, imm(Rs1)
-                match = re.match(r'(\d+)\(R(\d+)\)', operands[1])
+                match = re.match(r'(\d+)\(([Rr])(\d+)\)', operands[1])
                 if not match:
                     raise ValueError(f"Invalid memory operand: {operands[1]}")
+   
                 imm = int(match.group(1))
-                rs1 = self.parse_register(f"R{match.group(2)}")
+                r = match.group(2).upper()
+                rs1 = self.parse_register(f"{r}{match.group(3)}")
                 rd = self.parse_register(operands[0])
             else:
                 if len(operands) != 3:

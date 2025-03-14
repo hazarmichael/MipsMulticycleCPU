@@ -4,8 +4,6 @@ addi r2, r0, 123
 call max
 addi r10, r0, 999
 
-; function that takes numbers in R1 and R2 and returns
-; maximum in R3
 
 max :
 
