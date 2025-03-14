@@ -7,7 +7,7 @@ module reg_file (
     input [3:0] regSrc2,
     input [31:0] bus_w, bus2_w,
     output reg [31:0] out1, out2
-  );
+  )  /*synthesis syn_ramstyle="registers"*/;
 
   reg [31:0] regArray [0:15];
 
@@ -23,9 +23,8 @@ module reg_file (
     if (regWrite)
       regArray[regDst1] <= bus_w;
 
-
-    if (regWrite2)
-      regArray[regDst2] <= bus2_w;
+//    if (regWrite2)
+//      regArray[regDst2] <= bus2_w;
   end
 
 endmodule

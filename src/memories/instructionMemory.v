@@ -1,7 +1,7 @@
 module instructionMemory #(
     parameter WIDTH = 32
   ) (
-    output reg [31:0] data,
+    output [31:0] data,
     input clk,
     input [WIDTH-1:0] address
   );
