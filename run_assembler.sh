@@ -23,6 +23,9 @@ fi
 
 # Run the assembler
 python assembler/main.py "$@"
-
+if [ $? -ne 0 ]; then
+  echo "Assembler failed with runtime error"
+  exit 1
+fi
 # Deactivate the virtual environment
 deactivate

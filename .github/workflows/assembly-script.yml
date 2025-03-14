@@ -1,0 +1,43 @@
+name: Assembly and Python Syntax Check
+
+on: [push, pull_request]
+
+jobs:
+  assembly-and-python-syntax-check:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install flake8 for linting
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8
+
+    - name: Create output directory
+      run: mkdir -p output
+
+    - name: Run assembly script and check Python runtime errors for each file in testcases
+      run: |
+        set +e
+        all_errors=0
+        for file in testcases/*; do
+          ./run_assembler.sh "$file" "output/$(basename "$file" .asm).out"
+          if [ $? -ne 0 ]; then
+          echo "Error occurred while processing $file"
+          all_errors=1
+        fi
+        done
+        if [ $all_errors -ne 0 ]; then
+          exit 1
+        fi
+
+    - name: Clean up output directory
+      if: always()
+      run: rm -rf output
