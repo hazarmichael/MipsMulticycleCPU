@@ -1,1 +1,0 @@
-basic_components/flop.v basic_components/reg_file.v basic_components/mux2_1.v basic_components/mux4_1.v basic_components/extender.v basic_components/MyALU.v basic_components/memories.v controllers/ALUcontrol.v controllers/PCcontrol.v controllers/mainController.v datapath.v CPU.v computer.v
