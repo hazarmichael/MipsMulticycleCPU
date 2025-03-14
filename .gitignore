@@ -1,0 +1,8 @@
+verilog_code/obj_dir
+verilog_code/files.f
+verilog_code/image.svg
+verilog_code/dump.vcd
+verilog_code/synth.f
+assembler/venv
+.idea
+*.bin
