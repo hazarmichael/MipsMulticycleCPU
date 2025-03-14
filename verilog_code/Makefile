@@ -12,7 +12,7 @@ $(FILELIST):
 	@echo "basic_components/mux2_1.v" >> $(FILELIST)
 	@echo "basic_components/mux4_1.v" >> $(FILELIST)
 	@echo "basic_components/extender.v" >> $(FILELIST)
-	@echo "basic_components/ALU.v" >> $(FILELIST)
+	@echo "basic_components/MyALU.v" >> $(FILELIST)
 	@echo "basic_components/memories.v" >> $(FILELIST)
 	@echo "controllers/ALUcontrol.v" >> $(FILELIST)
 	@echo "controllers/PCcontrol.v" >> $(FILELIST)

@@ -1,4 +1,4 @@
-module ALU (
+module MyALU (
 
     input [1:0] ALUop,
     input signed [31:0] a,

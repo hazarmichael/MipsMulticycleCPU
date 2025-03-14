@@ -72,7 +72,7 @@ module datapath (
              .out1(BUS1), .out2(BUS2)
            );
 
-  ALU alu(
+  MyALU alu(
 
         .ALUop(ALUop),
         .a(ALU_operand1),
