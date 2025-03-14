@@ -1,0 +1,23 @@
+{
+  "AND": { "type": "R", "opcode": "000000" },
+  "ADD": { "type": "R", "opcode": "000001" },
+  "SUB": { "type": "R", "opcode": "000010" },
+
+  "ANDI": { "type": "I", "opcode": "000011", "signed_imm": false },
+  "ADDI": { "type": "I", "opcode": "000100", "signed_imm": true },
+  "LW": { "type": "I", "opcode": "000101", "signed_imm": true, "mode": "00" },
+  "LW.POI": { "type": "I", "opcode": "000110", "signed_imm": true, "mode": "01" },
+  "LW_POI": { "type": "I", "opcode": "000110", "signed_imm": true, "mode": "01" },
+  "SW": { "type": "I", "opcode": "000111", "signed_imm": true, "mode": "00" },
+  "BGT": { "type": "I", "opcode": "001000", "signed_imm": true },
+  "BLT": { "type": "I", "opcode": "001001", "signed_imm": true },
+  "BEQ": { "type": "I", "opcode": "001010", "signed_imm": true },
+  "BNE": { "type": "I", "opcode": "001011", "signed_imm": true },
+
+  "JMP": { "type": "J", "opcode": "001100" },
+  "CALL": { "type": "J", "opcode": "001101" },
+  "RET": { "type": "J", "opcode": "001110" },
+
+  "PUSH": { "type": "S", "opcode": "001111" },
+  "POP": { "type": "S", "opcode": "010000" }
+}

@@ -10,7 +10,7 @@ module instructionMemory #(
 
   initial
   begin
-    $readmemh("mul.dat", mem,  0, 11);
+    $readmemh("basic_components/mul.dat", mem,  0, 11);
   end
 
   assign data = mem[address];

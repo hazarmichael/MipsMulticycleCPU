@@ -1,8 +1,6 @@
-;sum array elements in address 80 to 87
-
-addi r12, r0, 80 ;address of the array
-addi r14, r0, 87 ;address of the last element
-addi r1, r0, 0 ;sum
+addi r12, r0, 80
+addi r14, r0, 87
+addi r1, r0, 0
 loop :
 		bgt r12, r14, endloop
 		lw_poi r2, r12, 0
