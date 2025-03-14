@@ -4,3 +4,4 @@ verilog_code/image.svg
 verilog_code/dump.vcd
 verilog_code/synth.f
 assembler/venv
+.idea
