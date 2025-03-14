@@ -17,7 +17,7 @@ class SymbolTable:
 
 class Assembler:
     # Path to your JSON file
-    json_file_path = "asssembler/instructions.json"
+    json_file_path = "assembler/instructions.json"
     # Open and read the JSON file
     with open(json_file_path, "r") as file:
         INSTRUCTIONS = json.load(file)
