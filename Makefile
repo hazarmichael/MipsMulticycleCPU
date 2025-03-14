@@ -30,4 +30,4 @@ run:
 	./build/V$(TOP)
 
 clean:
-	rm -rf build src/dump.vcd
+	rm -rf build src/dump.vcd *.bin *.out *.dat *.BIN *.vcd

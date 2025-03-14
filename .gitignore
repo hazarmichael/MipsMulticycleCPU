@@ -6,3 +6,4 @@ verilog_code/synth.f
 assembler/venv
 .idea
 *.bin
+build
