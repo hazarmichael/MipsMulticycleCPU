@@ -1,0 +1,17 @@
+name: Assembly Script CI
+
+on: [push, pull_request]
+
+jobs:
+  run-assembly-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Run assembly script for each file in testcases
+      run: |
+        for file in testcases/*; do
+          ./run_assembler.sh "$file" "output/$(basename "$file" .asm).out"
+        done
