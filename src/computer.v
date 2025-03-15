@@ -5,12 +5,21 @@
 
 module computer (
 
-    input clk, reset,
-    output [31:0] data_out_instruction);
+    input CLK, reset,
+    output [31:0] data_out_instruction,
+    output led);
 
+  wire clk;
   wire [31:0] data_out, data_in, address_data, address_inst;
 
   wire memWrite, memRead;
+
+    clockworks #(
+               .SLOW(21) // Divide clock frequency by 2^21
+             ) CW (
+               .CLK(CLK),
+               .clk(clk)
+             );
 
   instructionMemory inst_mem(
 
@@ -40,7 +49,8 @@ module computer (
         .address_instruction(address_inst),
         .MemWrite(memWrite),
         .MemRead(memRead),
-        .reset(reset)
+        .reset(reset),
+        .led(led)
       );
 
 endmodule

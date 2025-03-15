@@ -1,8 +1,9 @@
 module tb_computer();
 
-  reg clk, reset;
+  reg CLK, reset;
   wire [31:0] data_out_instruction;
-  always #10ns clk = ~clk;
+  wire led;
+  always #10ns CLK = ~CLK;
 
   initial
   begin
@@ -10,7 +11,7 @@ module tb_computer();
 	$dumpfile("dump.vcd");
 	$dumpvars(0, tb_computer);
 	$dumpvars(0, dut);
-    clk = 1;
+    CLK = 1;
     reset = 1;
     #1ns
      reset = 0;
@@ -29,9 +30,10 @@ end
 
   computer dut (
 
-             .clk(clk),
+             .CLK(CLK),
              .reset(reset),
-             .data_out_instruction(data_out_instruction)
+             .data_out_instruction(data_out_instruction),
+             .led(led)
            );
 
 endmodule

@@ -15,7 +15,8 @@ module datapath (
     output [1:0] mode,
     output [31:0] address_data, address_instruction, data_in,
     output z, n, v,
-    output [31:0] ALU_result
+    output [31:0] ALU_result,
+    output led
   );
 
   wire [3:0] Rs1, Rs2, Rd;
@@ -26,9 +27,9 @@ module datapath (
   wire [31:0] instruction, BUS1, BUS2, B_operand, A_operand, SP_address,
        increment, extended_immediate, ALU_operand1, ALU_operand2,
        jumpTargetAddress, PCtype, ALU_result_buffer, decrement,
-       stack_select_wire;
+       stack_select_wire;  /*synthesis syn_keep=1*/
 
-  wire[31:0] MDR_out, Register_result;
+  wire[31:0] MDR_out, Register_result; /*synthesis syn_keep=1*/
   wire [15:0] immediate;
 
   wire [3:0] Rs2_regfile;
@@ -69,7 +70,8 @@ module datapath (
              .regDst1(Rd), .regDst2(Rs1), .regSrc1(Rs1),
              .regSrc2(Rs2_regfile),
              .bus_w(Register_result), .bus2_w(increment),
-             .out1(BUS1), .out2(BUS2)
+             .out1(BUS1), .out2(BUS2),
+             .led(led)
            );
 
   MyALU alu(
