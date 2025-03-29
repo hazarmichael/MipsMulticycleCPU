@@ -1,6 +1,6 @@
 # Multicycle RISC Processor Design
 
-This repository contains the Verilog source code of the design of a multicycle RISC processor. Additional details regarding the ISA, implementation, and verification can be explored in the provided PDF [report](MulticycleRISCProcessor.pdf).
+This repository contains the Verilog source code of the design of a multicycle RISC processor. Additional details regarding the ISA, implementation, and verification can be explored in the provided PDF [report](docs/Report.pdf).
 
 # Table of Contents
 
